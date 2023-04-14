@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-$nama = "Budi";
-echo "<h1>".$nama."</h1>"
-?>
-<h1> <?php echo $nama  ?> </h1>
+    Index
 </body>
 </html>
