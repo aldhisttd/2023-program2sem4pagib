@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Belajar git branch</h1>
+    <h2>Belajar git branch</h2>
 </body>
 </html>
