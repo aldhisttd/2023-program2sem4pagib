@@ -9,6 +9,5 @@
     <option value="perempuan">Perempuan</option>
   </select><br><br>
 
-  <input type="submit" value="Submit">
 </form>
 </html>
