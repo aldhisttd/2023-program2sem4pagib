@@ -17,6 +17,7 @@
                 <option value="laki-laki">Laki-laki</option>
                 <option value="perempuan">Perempuan</option>
             </select>
+        </p>
         <p>
             <input type="submit" name="send" value="send">
         </p>
