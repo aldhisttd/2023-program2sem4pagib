@@ -18,7 +18,7 @@
     // simpan dalam format array
     $ary = mysqli_fetch_array($q);
     ?>
-    <form action="action/ac_index.php" method="POST" enctype="multipart/form-data">
+    <form action="action/ac_edit.php" method="POST" enctype="multipart/form-data">
 
         <table>
             <tr>
@@ -61,7 +61,7 @@
                 <td></td>
                 <td>
                     <br><br>
-                    <button type="submit">Simpan Data Mahasiswa</button>
+                    <button type="submit">Update Data Mahasiswa</button>
                 </td>
             </tr>
         </table>
