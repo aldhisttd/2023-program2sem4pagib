@@ -7,6 +7,7 @@
     <title>Form Input</title>
 </head>
 <body>
+    <?php include "components/menu.php" ?>
     
     <form action="action/ac_index.php" method="POST" enctype="multipart/form-data">
 

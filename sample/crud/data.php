@@ -20,7 +20,7 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-
+<?php include "components/menu.php" ?>
 <h2>Data Mahasiswa</h2>
 
 <table>
@@ -43,10 +43,12 @@ tr:nth-child(even) {
         <td><?php echo $row['nama'] ?></td>
         <td><?php echo $row['alamat'] ?></td>
         <td><?php echo $row['hp'] ?></td>
-        <td><?php echo $row['photo'] ?></td>
         <td>
-            <a href="#">Edit</a> - 
-            <a href="#">Hapus</a>
+          <img width="50" src="photo/<?php echo $row['photo'] ?>" alt="">
+        </td>
+        <td>
+            <a href="edit.php?nim=<?php echo $row['nim'] ?>">Edit</a> - 
+            <a href="hapus.php?nim=<?php echo $row['nim'] ?>">Hapus</a>
         </td>
     </tr>
     <?php

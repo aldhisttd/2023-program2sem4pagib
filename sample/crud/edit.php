@@ -7,7 +7,17 @@
     <title>Form Input</title>
 </head>
 <body>
-    
+    <?php include "components/menu.php" ?>
+    <?php 
+    // ambil nim nya dari url varible
+    $nim = $_REQUEST['nim'];
+    // koneksi
+    include "action/koneksi.php";
+    // jalankan query select dengan condition 
+    $q = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+    // simpan dalam format array
+    $ary = mysqli_fetch_array($q);
+    ?>
     <form action="action/ac_index.php" method="POST" enctype="multipart/form-data">
 
         <table>
@@ -15,28 +25,28 @@
                 <td>NIM</td>
                 <td>:</td>
                 <td>
-                    <input value="123" readonly type="text" name="nim">
+                    <input readonly type="text" name="nim" value="<?php echo $ary['nim'] ?>">
                 </td>
             </tr>
             <tr>
                 <td>Nama</td>
                 <td>:</td>
                 <td>
-                    <input value="Budi" type="text" name="nama">
+                    <input type="text" name="nama" value="<?php echo $ary['nama'] ?>">
                 </td>
             </tr>
             <tr>
                 <td>Alamat</td>
                 <td>:</td>
                 <td>
-                    <textarea name="alamat" cols="30" rows="5">alamat</textarea>
+                    <textarea name="alamat" cols="30" rows="5"><?php echo $ary['alamat'] ?></textarea>
                 </td>
             </tr>
             <tr>
                 <td>HP</td>
                 <td>:</td>
                 <td>
-                    <input value="081234341" type="text" name="hp">
+                    <input type="text" name="hp" value="<?php echo $ary['hp'] ?>">
                 </td>
             </tr>
             <tr>
@@ -51,7 +61,7 @@
                 <td></td>
                 <td>
                     <br><br>
-                    <button type="submit">Ubah Data Mahasiswa</button>
+                    <button type="submit">Simpan Data Mahasiswa</button>
                 </td>
             </tr>
         </table>
