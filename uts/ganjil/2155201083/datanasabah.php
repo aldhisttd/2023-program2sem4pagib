@@ -26,7 +26,7 @@ tr:nth-child(even) {
 
 <body>
 
-<h2>Tabel Barang</h2>
+<h2>Tabel Nasabah</h2>
 <a href="edit.php">Kembali Pada Input</a>
 <table border="2">
 
