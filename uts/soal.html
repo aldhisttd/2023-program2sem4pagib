@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 01 CRUD</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Pilihan Soal</h4>
+    <ol>
+        <li>Seri soal ada 2, GENAP dan GANJIL</li>
+        <li>Silahkan pilih soal sesuai dengan angka digit terakhir NIM kalian, Ganjil atau Genap</li>
+        <li>Untuk angka digit akhir 0, pilih yang GENAP</li>
+    </ol>
+
+    <h4>Instruksi Soal</h4>
+    <ol>
+        <li>Sumber branch = master</li>
+        <li>Ketentuan nama branch adalah: <strong>quiz/ganjil_NIM</strong> atau <strong>uts/genap_NIM</strong></li>
+        <li>Lokasi project kalian beradan di folder <strong>uts/ganjil/NIM atau uts/genap/NIM</strong></li>
+        <li>Buat database sesuai dengan rancangan tabel yang sudah di tentukan</li>
+        <li>Lalu buat modul <strong>READ, UPDATE, DELETE</strong> sesuai dengan materi di folder <strong>materi/crud</strong></li>
+        <li>Lakukan PR dengan nama branch tadi dan jangan lupa untuk melampirkan hasil output dari program</li>
+        <li>Jangan lupa di PR nya untuk menambahkan saya sebagai reviewer, ada di bagian kanan ketika PR</li>
+
+    </ol>
+
+    <table>
+        <tr>
+            <td>
+                <h4>Ganjil</h4>
+                <table>
+                    <tr>
+                        <th colspan="2">nasabah</th>
+                    </tr>
+                    <tr>
+                        <td>norek</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>nama</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>photo</td>
+                        <td>integer</td>
+                    </tr>
+                </table>
+            </td>
+
+            <td>
+                <h4>Genap</h4>
+                <table>
+                    <tr>
+                        <th colspan="2">surat</th>
+                    </tr>
+                    <tr>
+                        <td>kd_surat</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>penerima</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>lamp_gambar</td>
+                        <td>string</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+
+</html>
