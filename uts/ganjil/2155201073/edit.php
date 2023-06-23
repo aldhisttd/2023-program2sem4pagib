@@ -11,12 +11,12 @@
 <body>
     <?php include "components/menu.php" ?>
     <?php
-    // ambil nim nya dari url varible
-    $nim = $_REQUEST['nim'];
+    // ambil norek nya dari url varible
+    $norek = $_REQUEST['norek'];
     // koneksi
     include "action/koneksi.php";
     // jalankan query select dengan condition 
-    $q = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+    $q = mysqli_query($koneksi, "SELECT * FROM nasabah WHERE norek='$norek'");
     // simpan dalam format array
     $ary = mysqli_fetch_array($q);
     ?>
@@ -24,10 +24,10 @@
 
         <table>
             <tr>
-                <td>NIM</td>
+                <td>norek</td>
                 <td>:</td>
                 <td>
-                    <input readonly type="text" name="nim" value="<?php echo $ary['nim'] ?>">
+                    <input readonly type="text" name="norek" value="<?php echo $ary['norek'] ?>">
                 </td>
             </tr>
             <tr>
@@ -35,20 +35,6 @@
                 <td>:</td>
                 <td>
                     <input type="text" name="nama" value="<?php echo $ary['nama'] ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>Alamat</td>
-                <td>:</td>
-                <td>
-                    <textarea name="alamat" cols="30" rows="5"><?php echo $ary['alamat'] ?></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td>HP</td>
-                <td>:</td>
-                <td>
-                    <input type="text" name="hp" value="<?php echo $ary['hp'] ?>">
                 </td>
             </tr>
             <tr>
