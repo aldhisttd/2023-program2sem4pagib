@@ -16,6 +16,14 @@ if(isset($_POST['btn-login'])){
     // define user pass benar
     $userBenar = "admin";
     $passBenar = "admin";
+    
+    $userUmum = 'user';
+    $passUmum = 'user';
+
+    if ($user == $userUser && $pass == $passUser) {
+        $_SESSION['masuk'] = $user;
+        $_SESSION['role'] = 'user';
+        header('location:user.php'); 
 
     // bandingkan data login dari form dengan login yg benar
     if(($userBenar == $userForm) && ($passBenar == $passForm)){
