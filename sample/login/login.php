@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION['is_login'])){
+if (isset($_SESSION['is_login'])) {
     header('location:admin.php');
 }
 
-if(isset($_POST['btn-login'])){
+if (isset($_POST['btn-login'])) {
 
     // proses form nya
 
@@ -16,31 +16,33 @@ if(isset($_POST['btn-login'])){
     // define user pass benar
     $userBenar = "admin";
     $passBenar = "admin";
-
+    $userBenar = "user";
+    $passBenar = "user";
     // bandingkan data login dari form dengan login yg benar
-    if(($userBenar == $userForm) && ($passBenar == $passForm)){
+    if (($userBenar == $userForm) && ($passBenar == $passForm)) {
         // jika benar buat sesi sudah login
         $_SESSION['is_login'] = true;
         // pindah ke halaman admin
         header('location:admin.php');
-    }else{
+    } else {
         echo "login salah";
         //notif login sala
     }
-
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
 </head>
+
 <body>
-    
+
     <form action="" method="POST">
 
         <table>
@@ -63,9 +65,10 @@ if(isset($_POST['btn-login'])){
     </form>
 
 </body>
+
 </html>
 
 
-<?php 
+<?php
 
 ?>
