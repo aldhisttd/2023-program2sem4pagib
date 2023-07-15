@@ -18,7 +18,9 @@ if (!isset($_SESSION['userlogin'])) {
 </head>
 
 <body>
-    <h1>Selamat Datang,illa!</h1>
+    <h2 style="color:#862B0D">Halo Selamat Datang, Disini anda login sebagai user</h2>
+    <h2 style="color:#F86F03">감사합니다</h2>
+
 
     <a href="log_out.php">Logout</a>
 

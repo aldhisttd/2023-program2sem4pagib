@@ -18,8 +18,8 @@ if (isset($_POST['btn-login'])) {
     // define user pass benar
     $adminBenar = "admin";
     $passadminBenar = "admin";
-    $userBenar = "illa";
-    $passuserBenar = "illa123";
+    $userBenar = "user";
+    $passuserBenar = "user";
     // bandingkan data login dari form dengan login yg benar
     if (($adminBenar == $userForm) && ($passadminBenar == $passForm)) {
         // jika benar buat sesi sudah login

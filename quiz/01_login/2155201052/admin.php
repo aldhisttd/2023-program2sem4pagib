@@ -18,8 +18,8 @@ if (!isset($_SESSION['adminlogin'])) {
 </head>
 
 <body>
-    <h1>Selamat Datang,admin!
-    </h1>
+    <h1 style="color:#862B0D">Selamat Bergabung sebagai <h1 style="color:#1B6B93">Admin</h1>
+    <h3>Disini </h3>
 
     <a href="log_out.php">Logout</a>
 
