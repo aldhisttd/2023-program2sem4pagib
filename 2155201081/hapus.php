@@ -1,15 +1,15 @@
 <?php
 // ambil nim dari url variable
-$nim = $_REQUEST['Nomor_Tagihan'];
+$nomor_tagihan = $_REQUEST['nomor_tagihan'];
 // koneksi
 include "action/koneksi.php";
 // ambil nama photo
-$q = mysqli_query($koneksi, "SELECT photo FROM Pembayaran WHERE Nomor_Tagihan='$Nomor_Tagihan'");
+$q = mysqli_query($koneksi, "SELECT bukti_transfer FROM uts_2 WHERE nomor_tagihan='$nomor_tagihan'");
 $dt = mysqli_fetch_array($q);
-$photo = $dt['Bukti_Transfer'];
+$bukti_transfer = $dt['bukti_transfer'];
 // hapus file nya
-unlink('Bukti_Transfer/'.$bukti_transfer);
+unlink('bukti_upload/' . $bukti_transfer);
 // jalankan query delete dengan condition nim=nimnya
-mysqli_query($koneksi, "DELETE FROM Pembayaran WHERE Nomor_Tagihan='$Nomor_Tagihan'");
+mysqli_query($koneksi, "DELETE FROM uts_2 WHERE nomor_tagihan='$nomor_tagihan'");
 // kembalikan ke halaman data.php
 header('location:data.php');

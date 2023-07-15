@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,12 +10,12 @@
 <body>
     <?php include "components/menu.php" ?>
     <?php
-    // ambil nim nya dari url varible
-    $nim = $_REQUEST['nomor_tagihan'];
+    // ambil nomor tagihan nya dari url variable
+    $nomor_tagihan = $_REQUEST['nomor_tagihan'];
     // koneksi
     include "action/koneksi.php";
     // jalankan query select dengan condition 
-    $q = mysqli_query($koneksi, "SELECT * FROM Pembayaran WHERE nomor_tagihan='$nim'");
+    $q = mysqli_query($koneksi, "SELECT * FROM uts_2 WHERE nomor_tagihan='$nomor_tagihan'");
     // simpan dalam format array
     $ary = mysqli_fetch_array($q);
     ?>
@@ -24,38 +23,43 @@
 
         <table>
             <tr>
-                <td>nomor_tagihan</td>
+                <td>Nomor Tagihan</td>
                 <td>:</td>
                 <td>
-                    <input readonly type="text" name="nomor_tagihan" value="<?php echo $ary['nomor_tagihan'] ?>">
+                    <input  type="text" name="nomor_tagihan" value="<?php echo $ary['nomor_tagihan'] ?>">
                 </td>
             </tr>
             <tr>
-                <td>tanggal</td>
+                <td>Tanggal</td>
                 <td>:</td>
                 <td>
-                    <input type="text" name="tanggal" value="<?php echo $ary['tanggal'] ?>">
+                    <input type="date" name="tanggal" value="<?php echo $ary['tanggal'] ?>">
                 </td>
             </tr>
             <tr>
-                <td>jenis_tagihan</td>
+                <td>Jenis Tagihan</td>
                 <td>:</td>
                 <td>
-                    <textarea name="jenis_tagihan" cols="30" rows="5"><?php echo $ary['jenis_tagihan'] ?></textarea>
+                    <select name="jenis_tagihan" value="<?php echo $ary['jenis_tagihan'] ?>">
+                        <option value="listrik">Select Option</option>
+                        <option value="listrik">Listrik</option>
+                        <option value="internet">Internet</option>
+                        <option value="pajak">Pajak</option>
+                    </select>        
+
                 </td>
-            </tr>
             <tr>
-                <td>nominal</td>
+                <td>Nominal</td>
                 <td>:</td>
                 <td>
                     <input type="text" name="nominal" value="<?php echo $ary['nominal'] ?>">
                 </td>
             </tr>
             <tr>
-                <td>bukti_transfer</td>
+                <td>Bukti Transfer</td>
                 <td>:</td>
                 <td>
-                    <input type="file" name="Bukti_Transfer">
+                    <input type="file" name="bukti_transfer">
                 </td>
             </tr>
             <tr>
@@ -63,7 +67,7 @@
                 <td></td>
                 <td>
                     <br><br>
-                    <button type="submit">Update Pembayaran</button>
+                    <button type="submit">Update Data Mahasiswa</button>
                 </td>
             </tr>
         </table>

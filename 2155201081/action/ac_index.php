@@ -1,24 +1,18 @@
 <?php
+$path = $_FILES['bukti_transfer']['name'];
+$ext = "." . pathinfo($path, PATHINFO_EXTENSION);
+$bukti_transfer = md5(time()) . $ext;
+move_uploaded_file($_FILES['bukti_transfer']['tmp_name'], '../bukti_upload/' . $bukti_transfer);
 
-$path = $_FILES['photo']['name'];
-$ext = ".".pathinfo($path, PATHINFO_EXTENSION);
-$namaPhoto = md5(time()).$ext;
-move_uploaded_file($_FILES['photo']['tmp_name'], '../photo/'.$namaPhoto);
+$nomor_tagihan = $_POST['nomor_tagihan'];
+$tanggal = $_POST['tanggal'];
+$jenis_tagihan = $_POST['jenis_tagihan'];
+$nominal = $_POST['nominal'];
 
-$vnomor_tagihan = $_POST['nomor_tagihan'];
-$vtanggal = $_POST['tanggal'];
-$vjenis_tagihan = $_POST['jenis_tagihan'];
-$vnominal = $_POST['nominal'];
-$vbukti_transfer = $_POST['bukti_transfer'];
-
-$query = "INSERT INTO Pembayaran(nomor_tagihan, tanggal, jenis_tagihan, nominal, bukti_transfer) VALUES ($vnomor_tagihan, '$vtanggal','$vjenis_tagihan','$vnominal','$bukti_transfer')";
+$query = "INSERT INTO uts_2 (nomor_tagihan,tanggal,jenis_tagihan,nominal,bukti_transfer) VALUES ('$nomor_tagihan','$tanggal','$jenis_tagihan','$nominal','$bukti_transfer')";
 
 include "koneksi.php";
 
-mysqli_query($koneksi, $query);
+mysqli_query ($koneksi, $query);
 
 header("location:../data.php");
-
-
-
-

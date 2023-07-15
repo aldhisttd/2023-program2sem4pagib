@@ -1,2 +1,2 @@
-<?php 
-$koneksi = mysqli_connect("127.0.0.1", "root", "root", "4pagib", "3307");
+<?php
+$koneksi = mysqli_connect("localhost", "root", "", "uts_2");
