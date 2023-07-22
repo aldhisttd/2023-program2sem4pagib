@@ -5,7 +5,7 @@ if (!isset($_SESSION['masuk']))
 {header('location: login.php');}
 
 if ($_SESSION['role'] == 'user') 
-header('location: user.php');}
+{header('location: user.php');}
 if ($_SESSION['role'] == 'admin') 
 {header('location: admin.php');}
 
