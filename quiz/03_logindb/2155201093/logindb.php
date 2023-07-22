@@ -16,7 +16,7 @@ if(isset($_POST['btn-login'])){
     $passForm = $_POST['passForm'];
 
     //cek ke table, apakah user pass ada di DB table user
-    $koneksi = mysqli_connect('localhost','root','','login_pagib');
+    $koneksi = mysqli_connect('localhost','root','','db_4pagib');
     $sql = "SELECT * FROM user WHERE username='$userForm' AND password='$passForm'";
 
     $q = mysqli_query($koneksi,$sql);

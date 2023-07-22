@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if(isset($_SESSION['is_login'])){
@@ -15,27 +14,21 @@ if(isset($_POST['btn-login'])){
     // ambil nilai password form
     $passForm = $_POST['passForm'];
 
-    //cek ke table, apakah user pass ada di DB table user
-    $koneksi = mysqli_connect('localhost','root','','login_pagib');
-    $sql = "SELECT * FROM user WHERE username='$userForm' AND password='$passForm'";
+    // define user pass benar
+    $userBenar = "admin";
+    $passBenar = "admin";
 
-    $q = mysqli_query($koneksi,$sql);
+    // bandingkan data login dari form dengan login yg benar
+    if(($userBenar == $userForm) && ($passBenar == $passForm)){
 
-    $rowCount = mysqli_num_rows($q);
-
-
-    if($rowCount == 1){
         // jika benar buat sesi sudah login
-
         $_SESSION['is_login'] = 1;
-        $_SESSION['username'] = $userForm;
         // pindah ke halaman admin
         header('location:admin.php');
     }else{
-        //notif login salah
         echo "login salah";
+        //notif login sala
     }
-
 
 }
 
