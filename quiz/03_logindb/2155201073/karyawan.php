@@ -4,6 +4,9 @@ session_start();
 if (!isset($_SESSION['is_login'])) {
     header('location:login.php');
 }
+if (!isset($_SESSION['role'] == 'karyawan')) {
+    header('location:'.$_SESSION['role'].'.php');
+}
 
 ?>
 
