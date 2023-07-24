@@ -37,7 +37,7 @@
     </tr>
     <?php
     include "action/koneksi.php";
-    $data = mysqli_query($koneksi, "SELECT * FROM tagihan");
+    $data = mysqli_query($koneksi, "SELECT * FROM token_pembayaran");
 
     while ($row = mysqli_fetch_array($data)) {
     ?>

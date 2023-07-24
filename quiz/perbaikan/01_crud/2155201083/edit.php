@@ -15,7 +15,7 @@
     // koneksi
     include "action/koneksi.php";
     // jalankan query select dengan condition 
-    $q = mysqli_query($koneksi, "SELECT * FROM tagihan WHERE nomor_tagihan='$nomor_tagihan'");
+    $q = mysqli_query($koneksi, "SELECT * FROM token_pembayaran WHERE nomor_tagihan='$nomor_tagihan'");
     // simpan dalam format array
     $ary = mysqli_fetch_array($q);
     ?>

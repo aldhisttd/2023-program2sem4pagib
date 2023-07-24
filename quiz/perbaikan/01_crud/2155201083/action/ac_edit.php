@@ -12,7 +12,7 @@ include "koneksi.php";
 if ($_FILES['bukti_transfer']['name'] != "") {
 
     // ambil nama photo lama
-    $q = mysqli_query($koneksi, "SELECT bukti_transfer FROM tagihan WHERE nomor_tagihan='$nomor_tagihan'");
+    $q = mysqli_query($koneksi, "SELECT bukti_transfer FROM token_pembayaran WHERE nomor_tagihan='$nomor_tagihan'");
     $dt = mysqli_fetch_array($q);
     $bukti_transfer = $dt['bukti_transfer'];
  
@@ -26,10 +26,10 @@ if ($_FILES['bukti_transfer']['name'] != "") {
     move_uploaded_file($_FILES['bukti_transfer']['tmp_name'], '../bukti_transfer/' . $bukti_transfer);
 
     // update nama photo ke photo baru
-    mysqli_query($koneksi, "UPDATE tagihan SET bukti_transfer='$bukti_transfer' WHERE nomor_tagihan='$nomor_tagihan'");
+    mysqli_query($koneksi, "UPDATE token_pembayaran SET bukti_transfer='$bukti_transfer' WHERE nomor_tagihan='$nomor_tagihan'");
 }
 
 // update dengan condition
-mysqli_query($koneksi, "UPDATE tagihan SET tanggal='$tanggal', jenis_tagihan ='$jenis_tagihan', nominal = '$nominal',bukti_transfer = '$bukti_transfer' WHERE nomor_tagihan='$nomor_tagihan'");
+mysqli_query($koneksi, "UPDATE token_pembayaran SET tanggal='$tanggal', jenis_tagihan ='$jenis_tagihan', nominal = '$nominal',bukti_transfer = '$bukti_transfer' WHERE nomor_tagihan='$nomor_tagihan'");
 // pindah kehalaman data.php
 header("location:../data.php");
